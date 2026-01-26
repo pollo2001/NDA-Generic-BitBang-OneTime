@@ -37,7 +37,9 @@ void main(void)
 
     // Let LE settle briefly
     __delay_cycles(2);
-
+    
+    // GPIO_setOutputHighOnPin(LED_PORT, LED_PIN2); //done
+    
     shutdownPins();
 
     // Enter deep sleep (LPM4) to minimize power and digital noise
@@ -65,7 +67,14 @@ void SPI_Write(uint64_t data){
     }
 
     // Latch high to finalize transfer
+    delay(2); //cycle delay
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, LE_PIN);
+
+	// printf("wrote to register %d \n", (int)data);
+	// GPIO_setOutputHighOnPin(LED_PORT, LED_PIN1);
+	// __delay_cycles(1000000); //visible light
+	// GPIO_setOutputLowOnPin(LED_PORT, LED_PIN1);
+	// __delay_cycles(1000000);
 }
 
 // Setup GPIO pins and DCO
@@ -73,6 +82,11 @@ void setupPins(){
     GPIO_setAsOutputPin(GPIO_PORT_P1, LE_PIN | DATA_PIN | CLK_PIN);
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, DATA_PIN | CLK_PIN);
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, LE_PIN);
+
+    /*
+    GPIO_setAsOutputPin(LED_PORT, LED_PIN1 | LED_PIN2);
+    GPIO_setOutputHigh(LED_PORT, LED_PIN1 | LED_PIN2);
+    */
 
     // Max DCO frequency for timing
     CS_setDCOFreq(CS_DCORSEL_0, CS_DCOFSEL_3);
