@@ -25,7 +25,7 @@ Inspired by embedded firmware at Z-Communications. All code is heavily redacted 
 ---
 
 ## Features
-- **Configurable bit-width:** Supports 24–64 bit writes; larger writes limited by slave device buffer.
+- **Configurable bit-width:** Typically supports 24–64 bit writes; larger writes may be limited by slave device buffer.
 - **Modular design:** Easily adaptable to other MCUs or SPI-compatible peripherals.
 - **Power-optimized:** Deep sleep after initialization ensures minimal current draw.
 - **NDA-safe:** Demonstrates protocol logic without exposing proprietary hardware details.
