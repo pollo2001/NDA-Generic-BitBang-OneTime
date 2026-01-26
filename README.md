@@ -33,4 +33,9 @@ Inspired by embedded firmware at Z-Communications. All code is heavily redacted 
 
 ---
 
-**Developed by Genaro Salazar**  
+### Disclaimer
+This release is a **sanitized derivative** for demonstration and educational use only.  
+All proprietary firmware commands, hardware identifiers, and confidential data have been removed.
+
+### Development
+Developed by Genaro Salazar
