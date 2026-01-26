@@ -1,10 +1,13 @@
 #include "driverlib.h"
+//#include <stdio.h>
 //*****************************************************************************
 // NDA-SAFE GENERIC BIT-BANG SPI TEMPLATE (Configurable bit width)
 // GPIO pins:
 // LE_PIN   -> GPIO output (Latch Enable)
 // DATA_PIN -> GPIO output (Data / MOSI)
 // CLK_PIN  -> GPIO output (Clock)
+//LED_PIN1	-> GPIO OUTPUT (LED: Transfer)
+//LED_PIN2	-> GPIO OUTPUT (LED: DONE)
 //*****************************************************************************
 
 #define LE_PIN   GPIO_PIN3   // Example: P1.3
@@ -84,8 +87,8 @@ void setupPins(){
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, LE_PIN);
 
     /*
-    GPIO_setAsOutputPin(LED_PORT, LED_PIN1 | LED_PIN2);
-    GPIO_setOutputHigh(LED_PORT, LED_PIN1 | LED_PIN2);
+    GPIO_setAsOutputPinOn(LED_PORT, LED_PIN1 | LED_PIN2);
+    GPIO_setOutputHighOn(LED_PORT, LED_PIN1 | LED_PIN2);
     */
 
     // Max DCO frequency for timing
