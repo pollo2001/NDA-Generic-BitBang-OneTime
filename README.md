@@ -29,6 +29,7 @@ Inspired by embedded firmware at Z-Communications. All code is heavily redacted 
 - **Modular design:** Easily adaptable to other MCUs or SPI-compatible peripherals.
 - **Power-optimized:** Deep sleep after initialization ensures minimal current draw.
 - **NDA-safe:** Demonstrates protocol logic without exposing proprietary hardware details.
+- **DEBUG:** Statements to debug and visualize data packets transfer in real-time.
 
 ---
 
